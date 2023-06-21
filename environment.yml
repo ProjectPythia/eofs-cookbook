@@ -1,10 +1,11 @@
-name: cookbook-dev
+name: eofs-cookbook-dev
 channels:
   - conda-forge
 dependencies:
   - jupyter-book
   - jupyterlab
   - jupyter_server
+  - numpy
   - pip
   - pip:
       - sphinx-pythia-theme
