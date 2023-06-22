@@ -3,4 +3,5 @@ root: README
 parts:
   - caption: Introduction
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/eof-background
+      - file: notebooks/comparing-eof-packages
