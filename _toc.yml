@@ -1,7 +1,7 @@
 format: jb-book
 root: README
 parts:
-  - caption: Introduction
+  - caption: Foundations
     chapters:
-      - file: notebooks/eof-background
-      - file: notebooks/comparing-eof-packages
+      - file: notebooks/eof-intro
+      - file: notebooks/climate-modes-xeofs
