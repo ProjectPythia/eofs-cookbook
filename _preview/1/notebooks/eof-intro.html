@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Pythia Notebook Template &#8212; Project Pythia Cookbook Template</title>
+    <title>Introduction to EOFs &#8212; Project Pythia Cookbook Template</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,6 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Finding Climate Modes with EOFs" href="climate-modes-xeofs.html" />
+    <link rel="prev" title="EOFs Cookbook" href="../README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -191,9 +193,9 @@ const thebe_selector_output = ".output, .cell_output"
   Foundations
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="eof-intro.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introduction to EOFs
   </a>
  </li>
@@ -240,7 +242,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/notebook-template.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/eof-intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -260,10 +262,10 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ProjectPythia/cookbook-template//issues/new?title=Issue%20on%20page%20%2Fnotebooks/notebook-template.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ProjectPythia/cookbook-template//issues/new?title=Issue%20on%20page%20%2Fnotebooks/eof-intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythia/cookbook-template/edit/main/notebooks/notebook-template.ipynb"><button
+        <a class="edit-button" href="https://github.com/ProjectPythia/cookbook-template/edit/main/notebooks/eof-intro.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -283,7 +285,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?urlpath=lab/tree/notebooks/notebook-template.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?urlpath=lab/tree/notebooks/eof-intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -321,58 +323,18 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#your-first-content-section">
-   Your first content section
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-content-subsection">
-     A content subsection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#another-content-subsection">
-     Another content subsection
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#your-second-content-section">
-   Your second content section
+  <a class="reference internal nav-link" href="#the-method">
+   The method
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subsection-to-the-second-section">
-     Subsection to the second section
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-quick-demonstration">
-       a quick demonstration
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#of-further-and-further">
-         of further and further
-        </a>
-        <ul class="nav section-nav flex-column">
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#header-levels">
-           header levels
-          </a>
-         </li>
-        </ul>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#last-section">
-   Last Section
+  <a class="reference internal nav-link" href="#deriving-the-eigenvalue-problem">
+   Deriving the eigenvalue problem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -403,32 +365,16 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <p>Let’s start here! If you can directly link to an image relevant to your notebook, such as <a class="reference external" href="https://github.com/numpy/numpy/blob/main/doc/source/_static/numpylogo.svg">canonical logos</a>, do so here at the top of your notebook. You can do this with Markdown syntax,</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">![&lt;image</span> <span class="pre">title&gt;](http://link.com/to/image.png</span> <span class="pre">&quot;image</span> <span class="pre">alt</span> <span class="pre">text&quot;)</span></code></p>
-</div></blockquote>
-<p>or edit this cell to see raw HTML <code class="docutils literal notranslate"><span class="pre">img</span></code> demonstration. This is preferred if you need to shrink your embedded image. <strong>Either way be sure to include <code class="docutils literal notranslate"><span class="pre">alt</span></code> text for any embedded images to make your content more accessible.</strong></p>
-<p><a class="reference internal" href="../_images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="../_images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="project-pythia-notebook-template">
-<h1>Project Pythia Notebook Template<a class="headerlink" href="#project-pythia-notebook-template" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>Next, title your notebook appropriately with a top-level Markdown header, <code class="docutils literal notranslate"><span class="pre">#</span></code>. Do not use this level header anywhere else in the notebook. Our book build process will use this title in the navbar, table of contents, etc. Keep it short, keep it descriptive. Follow this with a <code class="docutils literal notranslate"><span class="pre">---</span></code> cell to visually distinguish the transition to the prerequisites section.</p>
+  <p><a class="reference internal" href="../_images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="../_images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-eofs">
+<h1>Introduction to EOFs<a class="headerlink" href="#introduction-to-eofs" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>If you have an introductory paragraph, lead with it here! Keep it short and tied to your material, then be sure to continue into the required list of topics below,</p>
-<ol class="arabic simple">
-<li><p>This is a numbered list of the specific topics</p></li>
-<li><p>These should map approximately to your main sections of content</p></li>
-<li><p>Or each second-level, <code class="docutils literal notranslate"><span class="pre">##</span></code>, header in your notebook</p></li>
-<li><p>Keep the size and scope of your notebook in check</p></li>
-<li><p>And be sure to let the reader know up front the important concepts they’ll be leaving with</p></li>
-</ol>
+<p>In this notebook, we will provide some background on empirical orthogonal functions (EOFs), develop some intuition, and cover the relevant mathematics.</p>
 </div>
 <div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>This section was inspired by <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/master/book/templates/chapter-template/chapter-landing-page.md">this template</a> of the wonderful <a class="reference external" href="https://the-turing-way.netlify.app">The Turing Way</a> Jupyter Book.</p>
-<p>Following your overview, tell your reader what concepts, packages, or other background information they’ll <strong>need</strong> before learning your material. Tie this explicitly with links to other pages here in Foundations or to relevant external resources. Remove this body text, then populate the Markdown table, denoted in this cell with <code class="docutils literal notranslate"><span class="pre">|</span></code> vertical brackets, below, and fill out the information following. In this table, lay out prerequisite concepts by explicitly linking to other Foundations material or external resources, or describe generally helpful concepts.</p>
-<p>Label the importance of each concept explicitly as <strong>helpful/necessary</strong>.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
@@ -437,121 +383,86 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/cartopy/cartopy.html">Intro to Cartopy</a></p></td>
+<tr class="row-even"><td><p>Linear algebra</p></td>
 <td><p>Necessary</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/data-formats/netcdf-cf.html">Understanding of NetCDF</a></p></td>
-<td><p>Helpful</p></td>
-<td><p>Familiarity with metadata structure</p></td>
-</tr>
-<tr class="row-even"><td><p>Project management</p></td>
-<td><p>Helpful</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li><p><strong>Time to learn</strong>: estimate in minutes. For a rough idea, use 5 mins per subsection, 10 if longer; add these up for a total. Safer to round up and overestimate.</p></li>
-<li><p><strong>System requirements</strong>:</p>
-<ul>
-<li><p>Populate with any system, version, or non-Python software requirements if necessary</p></li>
-<li><p>Otherwise use the concepts table above and the Imports section below to describe required packages as necessary</p></li>
-<li><p>If no extra requirements, remove the <strong>System requirements</strong> point altogether</p></li>
-</ul>
-</li>
+<li><p><strong>Time to learn</strong>: 20 minutes</p></li>
 </ul>
 </div>
 <hr class="docutils" />
 <div class="section" id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Begin your body of content with another <code class="docutils literal notranslate"><span class="pre">---</span></code> divider before continuing into this section, then remove this body text and populate the following code cell with all necessary Python imports <strong>up-front</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="your-first-content-section">
-<h2>Your first content section<a class="headerlink" href="#your-first-content-section" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>This is where you begin your first section of material, loosely tied to your objectives stated up front. Tie together your notebook as a narrative, with interspersed Markdown text, images, and more as necessary,</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># as well as any and all of your code cells</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>EOFs are commonly used to study the spatial and temporal variability of geophysical fields like sea surface temperature, sea level pressure, or geopotential height. Similar to how Fourier analysis allows us to decompose a time series into a sum of sinusoids of different frequencies, EOF analysis allows us to decompose a geophysical field into a set of mutually orthogonal spatial patterns and corresponding time series that are determined by the data (so, empirically). Terminology varies across texts, but here we will refer to the spatial patterns as “EOFs” and the time series as the “principal components” (PCs).</p>
+<p>Each EOF-PC pair can be thought of as a <em>mode of variability</em> in the data, but it is not necessary that these modes represent something physical. Each mode comes with a corresponding variance fraction that tells us how important the mode is. This is often phrased something like “the first mode explains 25% of the variance in the data,” and we will discuss what this means mathematically in the following sections. If a mode explains a large fraction of the total variance, it is more likely to be capturing some <em>physical</em> mode of variability, like the <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/enso/">El Niño Southern Oscillation (ENSO)</a> or <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/nao/">North Atlantic Oscillation (NAO)</a>.</p>
 </div>
+<div class="section" id="the-method">
+<h2>The method<a class="headerlink" href="#the-method" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>The steps required to compute EOFs and PCs are as follows:</p>
+<ol class="arabic simple">
+<li><p>Organize your data into a 2-dimensional matrix <span class="math notranslate nohighlight">\(\mathbf F\)</span> and remove the mean from each time series</p></li>
+<li><p>Calculate the covariance matrix <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span></p></li>
+<li><p>Find the eigenvectors (EOFs) <span class="math notranslate nohighlight">\(\mathbf e_m\in\mathbf E\)</span> and eigenvalues <span class="math notranslate nohighlight">\(\lambda_m\in\mathbf\Lambda\)</span> of <span class="math notranslate nohighlight">\(\mathbf R\)</span> by solving <span class="math notranslate nohighlight">\(\mathbf R\mathbf E=\mathbf\Lambda\mathbf E\)</span></p></li>
+<li><p>Order the eigenectors by their eigenvalues, since the eigenvalues are proportional to the fraction of variance explained by that mode</p></li>
+<li><p>Calculate the PCs for each mode with <span class="math notranslate nohighlight">\(\mathbf c_m=\mathbf e_m^\mathrm T\cdot\mathbf F\)</span> (i.e. projecting your data onto each eigenvector/EOF)</p></li>
+<li><p>Find the variance fraction for each mode with <span class="math notranslate nohighlight">\(\lambda_m\Large/\normalsize\sum_i^M\lambda_i\)</span></p></li>
+</ol>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="a-content-subsection">
-<h3>A content subsection<a class="headerlink" href="#a-content-subsection" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>Divide and conquer your objectives with Markdown subsections, which will populate the helpful navbar in Jupyter Lab and here on the Jupyter Book!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># some subsection code</span>
-<span class="n">new</span> <span class="o">=</span> <span class="s2">&quot;helpful information&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="another-content-subsection">
-<h3>Another content subsection<a class="headerlink" href="#another-content-subsection" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>Keep up the good work! A note, <em>try to avoid using code comments as narrative</em>, and instead let them only exist as brief clarifications where necessary.</p>
-</div>
-</div>
-<div class="section" id="your-second-content-section">
-<h2>Your second content section<a class="headerlink" href="#your-second-content-section" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Here we can move on to our second objective, and we can demonstrate</p>
-<div class="section" id="subsection-to-the-second-section">
-<h3>Subsection to the second section<a class="headerlink" href="#subsection-to-the-second-section" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<div class="section" id="a-quick-demonstration">
-<h4>a quick demonstration<a class="headerlink" href="#a-quick-demonstration" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
-<div class="section" id="of-further-and-further">
-<h5>of further and further<a class="headerlink" href="#of-further-and-further" title="Permalink to this headline"><i class="fas fa-link"></i></a></h5>
-<div class="section" id="header-levels">
-<h6>header levels<a class="headerlink" href="#header-levels" title="Permalink to this headline"><i class="fas fa-link"></i></a></h6>
-<p>as well <span class="math notranslate nohighlight">\(m = a * t / h\)</span> text! Similarly, you have access to other <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html"><strong>functionality</strong></a> via MathJax (demo below from link),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66985aef-44f6-4e94-b47d-f30ab729d0a0">
-<span class="eqno">()<a class="headerlink" href="#equation-66985aef-44f6-4e94-b47d-f30ab729d0a0" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
-\dot{x} &amp; = \sigma(y-x) \\
-\dot{y} &amp; = \rho x - y - xz \\
-\dot{z} &amp; = -\beta z + xy
-\end{align}\]</div>
-<p>Check out <a class="reference external" href="https://www.markdownguide.org/basic-syntax/"><strong>any number of helpful Markdown resources</strong></a> for further customizing your notebooks and the <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Working%20With%20Markdown%20Cells.html"><strong>Jupyter docs</strong></a> for Jupyter-specific formatting information. Don’t hesitate to ask questions if you have problems getting it to look <em>just right</em>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="last-section">
-<h2>Last Section<a class="headerlink" href="#last-section" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>If you’re comfortable, and as we briefly used for our embedded logo up top, you can embed raw html into Jupyter Markdown cells (edit to see):</p>
-<div class="admonition alert alert-info">
-<p class="admonition-title">Info</p>
-<p>Your relevant information here!</p>
-</div>
-<p>Feel free to copy this around and edit or play around with yourself. Some other <code class="docutils literal notranslate"><span class="pre">admonitions</span></code> you can put in:</p>
-<div class="admonition alert alert-success">
-<p class="admonition-title">Success</p>
-<p>We got this done after all!</p>
-</div>
-<div class="admonition alert alert-warning">
-<p class="admonition-title">Warning</p>
-<p>Be careful!</p>
-</div>
-<div class="admonition alert alert-danger">
-<p class="admonition-title">Danger</p>
-<p>Scary stuff be here.</p>
-</div>
-<p>We also suggest checking out Jupyter Book’s <a class="reference external" href="https://jupyterbook.org/content/metadata.html#jupyter-cell-tags">brief demonstration</a> on adding cell tags to your cells in Jupyter Notebook, Lab, or manually. Using these cell tags can allow you to <a class="reference external" href="https://jupyterbook.org/interactive/hiding.html">customize</a> how your code content is displayed and even <a class="reference external" href="https://jupyterbook.org/content/execute.html#dealing-with-code-that-raises-errors">demonstrate errors</a> without altogether crashing our loyal army of machines!</p>
+<div class="section" id="deriving-the-eigenvalue-problem">
+<h2>Deriving the eigenvalue problem<a class="headerlink" href="#deriving-the-eigenvalue-problem" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>It is not obvious why solving the eigenvalue problem for the covariance matrix results in spatial patterns that align well with the data. The following explanation follows those given by Preisendorfer (1988), Peixoto and Oort (1992), Bjornsson and Venegas (1997).</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, t)\)</span> be a geophysical field recorded over locations <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_M\)</span> and times <span class="math notranslate nohighlight">\(t_1, t_2, \dots, t_N\)</span>. In matrix notation, we can write each map of <span class="math notranslate nohighlight">\(M\)</span> locations as the column vector <span class="math notranslate nohighlight">\(\mathbf{f}_n=\begin{bmatrix}f_{1n} &amp; f_{2n} &amp; \cdots &amp; f_{Mn}\end{bmatrix}^\mathrm T\)</span>, where <span class="math notranslate nohighlight">\(n=1, \dots, N\)</span>. We then have an <span class="math notranslate nohighlight">\(M\times N\)</span> matrix that can be written as <span class="math notranslate nohighlight">\(\mathbf F=\begin{bmatrix}\mathbf{f}_1 &amp; \mathbf{f}_2 &amp; \cdots &amp; \mathbf{f}_N\end{bmatrix}\)</span>.</p>
+<p>Now, imagine that we only have three locations to collect data. Then each <span class="math notranslate nohighlight">\(\mathbf{f}_n\)</span> would be a 3-dimensional vector, and the whole set could be represented as a linear combination of three arbitrary basis vectors. This generalizes such that the vector space <span class="math notranslate nohighlight">\(\mathbf F\)</span> is spanned by an arbirary unit basis <span class="math notranslate nohighlight">\(\{\mathbf u_1,\mathbf u_2,\dots,\mathbf u_M\}\)</span>. It is very likely that some of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> are correlated as a result of some physical process. The goal of the EOF analysis is then to find an orthogonal unit basis <span class="math notranslate nohighlight">\(\{\mathbf e_1,\mathbf e_2,\dots,\mathbf e_M\}\)</span> that aligns well with these vector “clusters”. This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f1fdd20d-83ed-4c54-9755-2f67c2a6e595">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f1fdd20d-83ed-4c54-9755-2f67c2a6e595" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
+\end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6efdfc63-0da8-4e6d-941a-b9a5af571a70">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6efdfc63-0da8-4e6d-941a-b9a5af571a70" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+\begin{aligned}
+\psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
+&amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
+&amp;=\mathbf e_m^\mathrm T \sum_{n=1}^N(\mathbf f_n\mathbf f_n^\mathrm T\mathbf) e_m\\
+&amp;=\mathbf e_m^\mathrm T \mathbf F\mathbf F^\mathrm T\mathbf e_m\\
+&amp;=\mathbf e_m^\mathrm T \mathbf R\mathbf e_m
+\end{aligned}
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
+<p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e0d3bea0-e148-4984-bbe8-a9c894d8879f">
+<span class="eqno">(3)<a class="headerlink" href="#equation-e0d3bea0-e148-4984-bbe8-a9c894d8879f" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+\begin{aligned}
+\psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
+&amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
+&amp;\approx\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e\\
+&amp;=\psi(\mathbf e)+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e
+\end{aligned}
+\end{equation}\]</div>
+<p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
+<div class="amsmath math notranslate nohighlight" id="equation-aed1db21-2d98-4e13-a6bf-fee9ee8c4cdb">
+<span class="eqno">(4)<a class="headerlink" href="#equation-aed1db21-2d98-4e13-a6bf-fee9ee8c4cdb" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
+\end{equation}\]</div>
+<p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8a5bda2c-cd13-4d58-a196-b43e237073f2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-8a5bda2c-cd13-4d58-a196-b43e237073f2" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
+\end{equation}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="summary">
@@ -598,7 +509,21 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">EOFs Cookbook</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="climate-modes-xeofs.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Finding Climate Modes with EOFs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
