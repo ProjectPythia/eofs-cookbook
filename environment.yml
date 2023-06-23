@@ -6,6 +6,18 @@ dependencies:
   - jupyterlab
   - jupyter_server
   - numpy
+  - xarray
+  - matplotlib
+  - scipy
+  - cartopy
+  - xeofs
+  - eofs
+  - intake
+  - intake-esm
+  - fsspec
+  - nc-time-axis
+  - gcsfs
+  - cftime
   - pip
   - pip:
       - sphinx-pythia-theme
