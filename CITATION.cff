@@ -10,4 +10,4 @@ authors:
   - name: "EOFs Cookbook contributors" # use the 'name' field to acknowledge organizations
     website: "https://github.com/ProjectPythia/eofs-cookbook/graphs/contributors"
 title: "EOFs Cookbook"
-abstract: "A sample Cookbook description."
+abstract: "Description of empirical orthogonal function (EOF) analysis and examples of its application to geoscientific data."

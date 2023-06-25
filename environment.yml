@@ -18,6 +18,7 @@ dependencies:
   - nc-time-axis
   - gcsfs
   - cftime
+  - pydap
   - pip
   - pip:
       - sphinx-pythia-theme
