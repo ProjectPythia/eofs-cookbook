@@ -13,7 +13,7 @@ This Project Pythia Cookbook covers empirical orthogonal function analysis and i
 
 ## Authors
 
-[Robert Ford](@r-ford)
+[Robert Ford](https://github.com/r-ford)
 
 ### Contributors
 
