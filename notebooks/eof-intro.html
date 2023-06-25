@@ -377,9 +377,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <p><a class="reference internal" href="../_images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="../_images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-eofs">
+  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-eofs">
 <h1>Introduction to EOFs<a class="headerlink" href="#introduction-to-eofs" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="admonition alert alert-info">
+<p class="admonition-title">Note</p>
+<p>This content is under construction.</p>
+</div>
 <hr class="docutils" />
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -435,16 +438,16 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="section" id="deriving-the-eigenvalue-problem">
 <h2>Deriving the eigenvalue problem<a class="headerlink" href="#deriving-the-eigenvalue-problem" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>It is not obvious why solving the eigenvalue problem for the covariance matrix results in spatial patterns that align well with the data. The following explanation follows those given by Preisendorfer (1988), Peixoto and Oort (1992), Bjornsson and Venegas (1997).</p>
+<p>It is not obvious why solving the eigenvalue problem for the covariance matrix results in spatial patterns that align well with the data. The following explanation follows those given by Preisendorfer (1988), Peixoto et al. (1992), and Björnsson and Venegas (1997).</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x, t)\)</span> be a geophysical field recorded over locations <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_M\)</span> and times <span class="math notranslate nohighlight">\(t_1, t_2, \dots, t_N\)</span>. In matrix notation, we can write each map of <span class="math notranslate nohighlight">\(M\)</span> locations as the column vector <span class="math notranslate nohighlight">\(\mathbf{f}_n=\begin{bmatrix}f_{1n} &amp; f_{2n} &amp; \cdots &amp; f_{Mn}\end{bmatrix}^\mathrm T\)</span>, where <span class="math notranslate nohighlight">\(n=1, \dots, N\)</span>. We then have an <span class="math notranslate nohighlight">\(M\times N\)</span> matrix that can be written as <span class="math notranslate nohighlight">\(\mathbf F=\begin{bmatrix}\mathbf{f}_1 &amp; \mathbf{f}_2 &amp; \cdots &amp; \mathbf{f}_N\end{bmatrix}\)</span>.</p>
 <p>Now, imagine that we only have three locations to collect data. Then each <span class="math notranslate nohighlight">\(\mathbf{f}_n\)</span> would be a 3-dimensional vector, and the whole set could be represented as a linear combination of three arbitrary basis vectors. This generalizes such that the vector space <span class="math notranslate nohighlight">\(\mathbf F\)</span> is spanned by an arbirary unit basis <span class="math notranslate nohighlight">\(\{\mathbf u_1,\mathbf u_2,\dots,\mathbf u_M\}\)</span>. It is very likely that some of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> are correlated as a result of some physical process. The goal of the EOF analysis is then to find an orthogonal unit basis <span class="math notranslate nohighlight">\(\{\mathbf e_1,\mathbf e_2,\dots,\mathbf e_M\}\)</span> that aligns well with these vector “clusters”. This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fe02a5b-526f-4894-812d-5c6d9688de0f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8fe02a5b-526f-4894-812d-5c6d9688de0f" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6ef8f08-820b-4948-af10-8e59b1ea5740">
+<span class="eqno">(1)<a class="headerlink" href="#equation-e6ef8f08-820b-4948-af10-8e59b1ea5740" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a435737-3559-4e71-90dd-030b666ac97d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-6a435737-3559-4e71-90dd-030b666ac97d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-68a18ec6-4655-43af-bed4-4315c552f7e6">
+<span class="eqno">(2)<a class="headerlink" href="#equation-68a18ec6-4655-43af-bed4-4315c552f7e6" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 &amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
@@ -455,8 +458,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
 <p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38e57ee6-0658-46df-a45c-b75951f2ec5e">
-<span class="eqno">(3)<a class="headerlink" href="#equation-38e57ee6-0658-46df-a45c-b75951f2ec5e" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af2a7c3d-e7a8-4683-9fb5-50ba08976820">
+<span class="eqno">(3)<a class="headerlink" href="#equation-af2a7c3d-e7a8-4683-9fb5-50ba08976820" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
 &amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
@@ -465,13 +468,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 \end{aligned}
 \end{equation}\]</div>
 <p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-924982f1-b6c3-47f3-8f8f-c32480efb04e">
-<span class="eqno">(4)<a class="headerlink" href="#equation-924982f1-b6c3-47f3-8f8f-c32480efb04e" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-63566a6c-1bad-45f9-b650-57ed7db8590f">
+<span class="eqno">(4)<a class="headerlink" href="#equation-63566a6c-1bad-45f9-b650-57ed7db8590f" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
 \end{equation}\]</div>
 <p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a9759c7-b120-4ee6-9600-5cc269452a88">
-<span class="eqno">(5)<a class="headerlink" href="#equation-1a9759c7-b120-4ee6-9600-5cc269452a88" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca2a8be2-791f-41c3-892f-2b73193396a3">
+<span class="eqno">(5)<a class="headerlink" href="#equation-ca2a8be2-791f-41c3-892f-2b73193396a3" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
@@ -479,23 +482,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <hr class="docutils" />
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Add one final <code class="docutils literal notranslate"><span class="pre">---</span></code> marking the end of your body of content, and then conclude with a brief single paragraph summarizing at a high level the key pieces that were learned and how they tied to your objectives. Look to reiterate what the most important takeaways were.</p>
+<p>In this notebook, we covered some background on EOFs, the steps required to carry out an EOF analysis, and some of the math behind the analysis.</p>
 <div class="section" id="whats-next">
 <h3>What’s next?<a class="headerlink" href="#whats-next" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>Let Jupyter book tie this to the next (sequential) piece of content that people could move on to down below and in the sidebar. However, if this page uniquely enables your reader to tackle other nonsequential concepts throughout this book, or even external content, link to it here!</p>
+<p>An example of carrying out an EOF analysis on idealized data using NumPy. (Coming soon!)</p>
 </div>
 </div>
 <div class="section" id="resources-and-references">
 <h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Finally, be rigorous in your citations and references as necessary. Give credit where credit is due. Also, feel free to link to relevant external material, further reading, documentation, etc. Then you’re done! Give yourself a quick review, a high five, and send us a pull request. A few final notes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel</span> <span class="pre">and</span> <span class="pre">Run</span> <span class="pre">All</span> <span class="pre">Cells...</span></code> to confirm that your notebook will cleanly run from start to finish</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">&gt;</span> <span class="pre">Restart</span> <span class="pre">Kernel</span> <span class="pre">and</span> <span class="pre">Clear</span> <span class="pre">All</span> <span class="pre">Outputs...</span></code> before committing your notebook, our machines will do the heavy lifting</p></li>
-<li><p>Take credit! Provide author contact information if you’d like; if so, consider adding information here at the bottom of your notebook</p></li>
-<li><p>Give credit! Attribute appropriate authorship for referenced code, information, images, etc.</p></li>
-<li><p>Only include what you’re legally allowed: <strong>no copyright infringement or plagiarism</strong></p></li>
-</ul>
-<p>Thank you for your contribution!</p>
+<p>Björnsson, H., &amp; Venegas, S. A. (1997). A manual for EOF and SVD analyses of climatic data. <em>CCGCR Report</em>, <em>97</em>(1), 112-134.</p>
+<p>Peixoto, J. P., Oort, A. H., &amp; Lorenz, E. N. (1992). <em>Physics of climate</em> (Vol. 520). New York: American Institute of Physics.</p>
+<p>Preisendorfer, R. Ä. N. Ü. (1988). Principal component analysis in meteorology and oceanography. <em>Elsevier Sci. Publ.</em>, <em>17</em>, 425.</p>
 </div>
 </div>
 
@@ -581,7 +578,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 24 June 2023.
+          Last updated on 25 June 2023.
         </p>
       </div>
     </div>

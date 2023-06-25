@@ -322,13 +322,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-1-replace-with-the-title-of-this-section-e-g-foundations">
-     Section 1 ( Replace with the title of this section, e.g. “Foundations” )
+    <a class="reference internal nav-link" href="#foundations">
+     Foundations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-2-replace-with-the-title-of-this-section-e-g-example-workflows">
-     Section 2 ( Replace with the title of this section, e.g. “Example workflows” )
+    <a class="reference internal nav-link" href="#applications">
+     Applications
     </a>
    </li>
   </ul>
@@ -367,14 +367,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p><a class="reference external" href="https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml/badge.svg" /></a>
 <a class="reference external" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/eofs-cookbook/main?labpath=notebooks"><img alt="Binder" src="https://binder.projectpythia.org/badge_logo.svg" /></a>
 <a class="reference external" href="https://zenodo.org/badge/latestdoi/656765685"><img alt="DOI" src="https://zenodo.org/badge/656765685.svg" /></a></p>
-<p>This Project Pythia Cookbook covers … (replace <code class="docutils literal notranslate"><span class="pre">...</span></code> with the main subject of your cookbook … e.g., <em>working with radar data in Python</em>)</p>
+<p>This Project Pythia Cookbook covers empirical orthogonal function analysis and its application to geoscientific (primarily climate) data.</p>
 <div class="section" id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>(Add a few sentences stating why this cookbook will be useful. What skills will you, “the chef”, gain once you have reached the end of the cookbook?)</p>
 </div>
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p><span class="xref myst">First Author</span>, <span class="xref myst">Second Author</span>, etc. <em>Acknowledge primary content authors here</em></p>
+<p><span class="xref myst">Robert Ford</span></p>
 <div class="section" id="contributors">
 <h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <a href="https://github.com/ProjectPythia/eofs-cookbook/graphs/contributors">
@@ -384,14 +383,11 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>(State one or more sections that will comprise the notebook. E.g., <em>This cookbook is broken up into two main sections - “Foundations” and “Example Workflows.”</em> Then, describe each section below.)</p>
-<div class="section" id="section-1-replace-with-the-title-of-this-section-e-g-foundations">
-<h3>Section 1 ( Replace with the title of this section, e.g. “Foundations” )<a class="headerlink" href="#section-1-replace-with-the-title-of-this-section-e-g-foundations" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “The foundational content includes … “)</p>
+<div class="section" id="foundations">
+<h3>Foundations<a class="headerlink" href="#foundations" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 </div>
-<div class="section" id="section-2-replace-with-the-title-of-this-section-e-g-example-workflows">
-<h3>Section 2 ( Replace with the title of this section, e.g. “Example workflows” )<a class="headerlink" href="#section-2-replace-with-the-title-of-this-section-e-g-example-workflows" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<p>(Add content for this section, e.g., “Example workflows include … “)</p>
+<div class="section" id="applications">
+<h3>Applications<a class="headerlink" href="#applications" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 </div>
 </div>
 <div class="section" id="running-the-notebooks">
@@ -417,21 +413,20 @@ Jupyter</a>.</p>
 <div class="section" id="running-on-your-own-machine">
 <h3>Running on Your Own Machine<a class="headerlink" href="#running-on-your-own-machine" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>If you are interested in running this material locally on your computer, you will need to follow this workflow:</p>
-<p>(Replace “cookbook-example” with the title of your cookbooks)</p>
 <ol class="arabic">
-<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/ProjectPythia/cookbook-example</span></code> repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ProjectPythia/cookbook-example.git
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/ProjectPythia/eofs-cookbook</span></code> repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ProjectPythia/eofs-cookbook.git
 </pre></div>
 </div>
 </li>
-<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">cookbook-example</span></code> directory</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>cookbook-example
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">eofs-cookbook</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>eofs-cookbook
 </pre></div>
 </div>
 </li>
 <li><p>Create and activate your conda environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
-conda<span class="w"> </span>activate<span class="w"> </span>cookbook-example
+conda<span class="w"> </span>activate<span class="w"> </span>eofs-cookbook-dev
 </pre></div>
 </div>
 </li>
@@ -525,7 +520,7 @@ jupyter<span class="w"> </span>lab
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 24 June 2023.
+          Last updated on 25 June 2023.
         </p>
       </div>
     </div>

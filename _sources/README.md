@@ -6,15 +6,14 @@
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/eofs-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/656765685.svg)](https://zenodo.org/badge/latestdoi/656765685)
 
-This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
+This Project Pythia Cookbook covers empirical orthogonal function analysis and its application to geoscientific (primarily climate) data.
 
 ## Motivation
 
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
 
 ## Authors
 
-[First Author](@first-author), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+[Robert Ford](@r-ford)
 
 ### Contributors
 
@@ -24,15 +23,14 @@ This Project Pythia Cookbook covers ... (replace `...` with the main subject of 
 
 ## Structure
 
-(State one or more sections that will comprise the notebook. E.g., _This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."_ Then, describe each section below.)
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
+### Foundations
 
-(Add content for this section, e.g., "The foundational content includes ... ")
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
 
-(Add content for this section, e.g., "Example workflows include ... ")
+### Applications
+
+
 
 ## Running the Notebooks
 
@@ -59,22 +57,20 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
 
-(Replace "cookbook-example" with the title of your cookbooks)
-
-1. Clone the `https://github.com/ProjectPythia/cookbook-example` repository:
+1. Clone the `https://github.com/ProjectPythia/eofs-cookbook` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythia/cookbook-example.git
+    git clone https://github.com/ProjectPythia/eofs-cookbook.git
    ```
 
-1. Move into the `cookbook-example` directory
+1. Move into the `eofs-cookbook` directory
    ```bash
-   cd cookbook-example
+   cd eofs-cookbook
    ```
 1. Create and activate your conda environment from the `environment.yml` file
    ```bash
    conda env create -f environment.yml
-   conda activate cookbook-example
+   conda activate eofs-cookbook-dev
    ```
 1. Move into the `notebooks` directory and start up Jupyterlab
    ```bash
