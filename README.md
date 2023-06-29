@@ -1,4 +1,4 @@
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
+<img src="notebooks/images/nh-slp-eofs.png" alt="thumbnail" width="800"/>
 
 # EOFs Cookbook
 
