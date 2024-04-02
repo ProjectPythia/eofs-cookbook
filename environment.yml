@@ -22,4 +22,4 @@ dependencies:
   - sphinx-pythia-theme
   - pip
   - pip:
-      - eofs
+      - xeofs
