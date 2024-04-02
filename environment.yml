@@ -19,6 +19,7 @@ dependencies:
   - gcsfs
   - cftime
   - pydap
+  - sphinx-pythia-theme
   - pip
   - pip:
-      - sphinx-pythia-theme
+      - xeofs
