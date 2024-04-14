@@ -81,7 +81,7 @@
     <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="5 April 2024"/>
+    <meta name="docbuild:last-update" content="14 April 2024"/>
   </head>
   
   
@@ -400,10 +400,6 @@
                     
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-eofs">
 <h1>Introduction to EOFs<a class="headerlink" href="#introduction-to-eofs" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
-<div class="admonition alert alert-info">
-<p class="admonition-title">Note</p>
-<p>This content is under construction.</p>
-</div>
 <hr class="docutils" />
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
@@ -432,18 +428,59 @@
 <hr class="docutils" />
 <section id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>N/A</p>
 </section>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>EOFs are commonly used to study the spatial and temporal variability of geophysical fields like sea surface temperature, sea level pressure, or geopotential height. Similar to how Fourier analysis allows us to decompose a time series into a sum of sinusoids of different frequencies, EOF analysis allows us to decompose a geophysical field into a set of mutually orthogonal spatial patterns and corresponding time series that are determined by the data (so, empirically). Terminology varies across texts, but here we will refer to the spatial patterns as “EOFs” and the time series as the “principal components” (PCs).</p>
 <p>Each EOF-PC pair can be thought of as a <em>mode of variability</em> in the data, but it is not necessary that these modes represent something physical. Each mode comes with a corresponding variance fraction that tells us how important the mode is. This is often phrased something like “the first mode explains 25% of the variance in the data,” and we will discuss what this means mathematically in the following sections. If a mode explains a large fraction of the total variance, it is more likely to be capturing some <em>physical</em> mode of variability, like the <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/enso/">El Niño Southern Oscillation (ENSO)</a> or <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/nao/">North Atlantic Oscillation (NAO)</a>.</p>
+</section>
+<section id="examples-of-use">
+<h2>Examples of use<a class="headerlink" href="#examples-of-use" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<p>EOF analysis (also called principal component analysis, PCA) has been applied to meteorological and oceanographic data since the 1940s and 1970s, respectively (Preisendorfer 1988). Here are a few examples of its use:</p>
+<section id="identifying-climate-modes-the-pacific-decadal-oscillation">
+<h3>Identifying climate modes: the Pacific Decadal Oscillation<a class="headerlink" href="#identifying-climate-modes-the-pacific-decadal-oscillation" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>The Pacific Decadal Oscillation (PDO) is a mode of climate variability characterized by decadal-scale sea surface temperature (SST) anomalies in the North Pacific. As typically defined, the positive/warm phase of PDO occurs when the SSTs off the west coast of North America are anomalously warm and the eastern/interior North Pacific is anomalously cold (and vice versa for the negative/cold phase). Since its identification and naming in the 1990s, PDO has been defined as the leading (i.e., first) EOF in North Pacific SST anomalies (Mantua and Hare 2002). This is the same definition used by <a class="reference external" href="https://www.ncei.noaa.gov/access/monitoring/pdo/">NOAA in their PDO index</a>.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><img alt="PDO" src="../_images/mantua_hare_1.PNG" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Adapted from Mantua and Hare (2002). The three plots on the top show the EOFs for SST, sea level pressure, and surface wind stress, while the time series at the bottom is the associated PC.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Besides the modes of variability already mentioned, an EOF analysis can also be used to identify the Northern and Southern Annular Modes (NAM and SAM), the Atlantic Multidecadal Oscillation/Variability (AMO/V), the zonal wave 3 pattern (ZW3) of both hemispheres, and others.</p>
+</section>
+<section id="identifying-patterns-across-an-ensemble">
+<h3>Identifying patterns across an ensemble<a class="headerlink" href="#identifying-patterns-across-an-ensemble" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>While an EOF analysis is usually applied to data that is a function of space and time, it can also be used with data that is a function of space and <em>ensemble member</em>. Then the analysis may be able to identify the most important patterns that characterize the differences between ensemble members. Tokinaga et al. (2012) perform an EOF analysis on an ensemble of 100 realizations of observed SSTs in order to understand the uncertainty in the zonal SST gradient in the tropical Pacific.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><img alt="Pacific EOF" src="../_images/tokinaga_eof.PNG" /><img alt="Pacific PC vs. SST gradient" src="../_images/tokinaga_pcs.PNG" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Adapted from Tokinaga et al. (2012). The left plot shows the leading EOF (with 83.6% variance fraction) of tropical Pacific SST across 100 realizations of observed SSTs. The right plot shows the PC (in this case, a single value instead of a time series) associated with the EOF plotted against the zonal SST gradient in the tropical Pacific for each ensemble member.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="isolating-the-global-warming-signal">
+<h3>Isolating the global warming signal<a class="headerlink" href="#isolating-the-global-warming-signal" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
+<p>To isolate the global warming signal from internal variability, it is common to run a climate model multiple times—with the same anthropogenic emissions and slightly different initial conditions—and take the average response across the ensemble. With enough ensemble members, the internal variability should mostly cancel out, identifying the ensemble average with the model’s response to the emissions. Unfortunately, we cannot use this method on Earth’s actual climate, which only has one realization. As you will see in <a class="reference internal" href="climate-modes-xeofs.html"><span class="doc std std-doc">Finding Climate Modes with EOFs</span></a>, the long-term warming trend will be apparent in an EOF analysis of observed SSTs if the data is not detrended, but it is not cleanly separated from internal variability. Wills et al. (2018) develop a method, which they call low-frequency component analysis (LFCA), that can more cleanly separate out the warming trend. After perfoming an EOF analysis, their method finds a linear combination of the EOFs that maximizes the variance fraction at low frequencies (see their paper for more details).</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><img alt="LFCA" src="../_images/wills_1.PNG" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Adapted from Wills et al. (2018). Three leading low frequency patterns (LFPs, similar to EOFs) and their corresponding low frequency components (LFCs, similar to PCs) for Pacific SST anomalies. This method is able to separate the global warming trend from PDO and ENSO.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="the-method">
 <h2>The method<a class="headerlink" href="#the-method" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
@@ -459,16 +496,27 @@
 </section>
 <section id="deriving-the-eigenvalue-problem">
 <h2>Deriving the eigenvalue problem<a class="headerlink" href="#deriving-the-eigenvalue-problem" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
-<p>It is not obvious why solving the eigenvalue problem for the covariance matrix results in spatial patterns that align well with the data. The following explanation follows those given by Preisendorfer (1988), Peixoto et al. (1992), and Björnsson and Venegas (1997).</p>
+<p>As an aside, it is not obvious why solving the eigenvalue problem for the covariance matrix results in spatial patterns that align well with the data. The following explanation follows those given by Preisendorfer (1988), Peixoto et al. (1992), and Björnsson and Venegas (1997).</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x, t)\)</span> be a geophysical field recorded over locations <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_M\)</span> and times <span class="math notranslate nohighlight">\(t_1, t_2, \dots, t_N\)</span>. In matrix notation, we can write each map of <span class="math notranslate nohighlight">\(M\)</span> locations as the column vector <span class="math notranslate nohighlight">\(\mathbf{f}_n=\begin{bmatrix}f_{1n} &amp; f_{2n} &amp; \cdots &amp; f_{Mn}\end{bmatrix}^\mathrm T\)</span>, where <span class="math notranslate nohighlight">\(n=1, \dots, N\)</span>. We then have an <span class="math notranslate nohighlight">\(M\times N\)</span> matrix that can be written as <span class="math notranslate nohighlight">\(\mathbf F=\begin{bmatrix}\mathbf{f}_1 &amp; \mathbf{f}_2 &amp; \cdots &amp; \mathbf{f}_N\end{bmatrix}\)</span>.</p>
-<p>Now, imagine that we only have three locations to collect data. Then each <span class="math notranslate nohighlight">\(\mathbf{f}_n\)</span> would be a 3-dimensional vector, and the whole set could be represented as a linear combination of three arbitrary basis vectors. This generalizes such that the vector space <span class="math notranslate nohighlight">\(\mathbf F\)</span> is spanned by an arbirary unit basis <span class="math notranslate nohighlight">\(\{\mathbf u_1,\mathbf u_2,\dots,\mathbf u_M\}\)</span>. It is very likely that some of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> are correlated as a result of some physical process. The goal of the EOF analysis is then to find an orthogonal unit basis <span class="math notranslate nohighlight">\(\{\mathbf e_1,\mathbf e_2,\dots,\mathbf e_M\}\)</span> that aligns well with these vector “clusters”. This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1aba645e-9e52-40ea-a345-77fe9847772d">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1aba645e-9e52-40ea-a345-77fe9847772d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<p>Now, imagine that we only have three locations to collect data. Then each <span class="math notranslate nohighlight">\(\mathbf{f}_n\)</span> would be a 3-dimensional vector, and the whole set could be represented as a linear combination of three arbitrary basis vectors. This generalizes such that the vector space <span class="math notranslate nohighlight">\(\mathbf F\)</span> is spanned by an arbirary unit basis <span class="math notranslate nohighlight">\(\{\mathbf u_1,\mathbf u_2,\dots,\mathbf u_M\}\)</span>. It is very likely that some of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> are correlated as a result of some physical process. The goal of the EOF analysis is then to find an orthogonal unit basis <span class="math notranslate nohighlight">\(\{\mathbf e_1,\mathbf e_2,\dots,\mathbf e_M\}\)</span> that aligns well with these vector “clusters”.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><img alt="EOF clustering" src="../_images/peixoto_b1.PNG" /></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Adapted from Peixoto et al. (1992).</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-be6e0868-bab0-4574-95b6-976c6e079f3d">
+<span class="eqno">(1)<a class="headerlink" href="#equation-be6e0868-bab0-4574-95b6-976c6e079f3d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae28a2ce-274e-4beb-b03b-0fe6eb2d0a16">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ae28a2ce-274e-4beb-b03b-0fe6eb2d0a16" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-02d840c5-8cea-4c0d-b289-bc369a1ef79f">
+<span class="eqno">(2)<a class="headerlink" href="#equation-02d840c5-8cea-4c0d-b289-bc369a1ef79f" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 &amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
@@ -479,8 +527,8 @@
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
 <p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82aafefa-2130-4d62-97e4-113f161b92e1">
-<span class="eqno">(3)<a class="headerlink" href="#equation-82aafefa-2130-4d62-97e4-113f161b92e1" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cd3b83a3-932a-4c35-9f0c-8aa7a638f305">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cd3b83a3-932a-4c35-9f0c-8aa7a638f305" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
 &amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
@@ -489,13 +537,13 @@
 \end{aligned}
 \end{equation}\]</div>
 <p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be1010bc-0e8a-4971-aa07-87640ca41a13">
-<span class="eqno">(4)<a class="headerlink" href="#equation-be1010bc-0e8a-4971-aa07-87640ca41a13" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-563376db-1451-47fd-807e-1ca781f6961d">
+<span class="eqno">(4)<a class="headerlink" href="#equation-563376db-1451-47fd-807e-1ca781f6961d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
 \end{equation}\]</div>
 <p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63816264-600a-4af3-8b43-8edcf0e7d135">
-<span class="eqno">(5)<a class="headerlink" href="#equation-63816264-600a-4af3-8b43-8edcf0e7d135" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-50f61f70-f62c-4570-b6c4-212a2ea4ffd2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-50f61f70-f62c-4570-b6c4-212a2ea4ffd2" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
@@ -506,14 +554,17 @@
 <p>In this notebook, we covered some background on EOFs, the steps required to carry out an EOF analysis, and some of the math behind the analysis.</p>
 <section id="whats-next">
 <h3>What’s next?<a class="headerlink" href="#whats-next" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
-<p>An example of carrying out an EOF analysis on idealized data using NumPy. (Coming soon!)</p>
+<p>In the next notebook, we will use a package called <code class="docutils literal notranslate"><span class="pre">xeofs</span></code> to find climate modes in SST data.</p>
 </section>
 </section>
 <section id="resources-and-references">
 <h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Björnsson, H., &amp; Venegas, S. A. (1997). A manual for EOF and SVD analyses of climatic data. <em>CCGCR Report</em>, <em>97</em>(1), 112-134.</p>
+<p>Mantua, N. J., &amp; Hare, S. R. (2002). The Pacific Decadal Oscillation. <em>Journal of Oceanography</em>, <em>58</em>, 35-44.</p>
 <p>Peixoto, J. P., Oort, A. H., &amp; Lorenz, E. N. (1992). <em>Physics of climate</em> (Vol. 520). New York: American Institute of Physics.</p>
 <p>Preisendorfer, R. Ä. N. Ü. (1988). Principal component analysis in meteorology and oceanography. <em>Elsevier Sci. Publ.</em>, <em>17</em>, 425.</p>
+<p>Tokinaga, H., Xie, S. P., Deser, C., Kosaka, Y., &amp; Okumura, Y. M. (2012). Slowdown of the Walker circulation driven by tropical Indo-Pacific warming. <em>Nature</em>, <em>491</em>(7424), 439-443.</p>
+<p>Wills, R. C., Schneider, T., Wallace, J. M., Battisti, D. S., &amp; Hartmann, D. L. (2018). Disentangling global warming, multidecadal variability, and El Niño in Pacific temperatures. <em>Geophysical Research Letters</em>, <em>45</em>(5), 2487-2496.</p>
 </section>
 </section>
 
@@ -586,6 +637,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-use">Examples of use</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-climate-modes-the-pacific-decadal-oscillation">Identifying climate modes: the Pacific Decadal Oscillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-patterns-across-an-ensemble">Identifying patterns across an ensemble</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#isolating-the-global-warming-signal">Isolating the global warming signal</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method">The method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-eigenvalue-problem">Deriving the eigenvalue problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
@@ -835,7 +892,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 5 April 2024.
+  Last updated on 14 April 2024.
   <br/>
 </p>
   </div>
@@ -889,7 +946,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 5 April 2024.
+          Last updated on 14 April 2024.
         </p>
       </div>
     </div>
