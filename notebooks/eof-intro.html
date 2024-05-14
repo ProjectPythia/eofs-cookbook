@@ -43,7 +43,7 @@
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -81,7 +81,7 @@
     <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="14 April 2024"/>
+    <meta name="docbuild:last-update" content="14 May 2024"/>
   </head>
   
   
@@ -510,13 +510,13 @@
 </tbody>
 </table>
 <p>This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f93a4f61-d48e-406d-b238-0130ae72a50a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f93a4f61-d48e-406d-b238-0130ae72a50a" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cad67a5e-81e8-4fbd-a924-901b707442b8">
+<span class="eqno">(1)<a class="headerlink" href="#equation-cad67a5e-81e8-4fbd-a924-901b707442b8" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ffcfe62-7ec4-4f71-81f2-a74fea60ecbc">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3ffcfe62-7ec4-4f71-81f2-a74fea60ecbc" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c6b791ba-5f53-4eb2-9518-1085c415487a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c6b791ba-5f53-4eb2-9518-1085c415487a" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 &amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
@@ -527,8 +527,8 @@
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
 <p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6bc17aad-b0d4-4a43-a436-200badf42c07">
-<span class="eqno">(3)<a class="headerlink" href="#equation-6bc17aad-b0d4-4a43-a436-200badf42c07" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-52ec91dc-9b26-448b-bec4-61d35980db12">
+<span class="eqno">(3)<a class="headerlink" href="#equation-52ec91dc-9b26-448b-bec4-61d35980db12" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
 &amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
@@ -537,13 +537,13 @@
 \end{aligned}
 \end{equation}\]</div>
 <p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15f46f49-eb67-4fdb-8098-9e9d9a3077d7">
-<span class="eqno">(4)<a class="headerlink" href="#equation-15f46f49-eb67-4fdb-8098-9e9d9a3077d7" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8bd96fba-ed67-47ca-96bd-d908908259f3">
+<span class="eqno">(4)<a class="headerlink" href="#equation-8bd96fba-ed67-47ca-96bd-d908908259f3" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
 \end{equation}\]</div>
 <p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70f44d9d-b16d-469b-bad6-8e18625f73d7">
-<span class="eqno">(5)<a class="headerlink" href="#equation-70f44d9d-b16d-469b-bad6-8e18625f73d7" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b493fbec-a730-4788-a929-0601b8b2ec20">
+<span class="eqno">(5)<a class="headerlink" href="#equation-b493fbec-a730-4788-a929-0601b8b2ec20" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
@@ -892,7 +892,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 14 April 2024.
+  Last updated on 14 May 2024.
   <br/>
 </p>
   </div>
@@ -946,7 +946,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 14 April 2024.
+          Last updated on 14 May 2024.
         </p>
       </div>
     </div>
