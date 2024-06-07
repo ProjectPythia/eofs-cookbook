@@ -455,7 +455,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>Adapted from <span id="id3">[<a class="reference internal" href="../references.html#id8" title="Nathan J. Mantua and Steven R. Hare. The pacific decadal oscillation. Journal of Oceanography, 58(1):35–44, 2002. doi:10.1023/A:1015820616384.">Mantua and Hare, 2002</a>]</span>. The three plots on the top show the EOFs for SST, sea level pressure, and surface wind stress, while the time series at the bottom is the associated PC.</p></td>
+<tr class="row-even"><td class="text-center"><p>Adapted from <span id="id3">Mantua and Hare [<a class="reference internal" href="../references.html#id8" title="Nathan J. Mantua and Steven R. Hare. The pacific decadal oscillation. Journal of Oceanography, 58(1):35–44, 2002. doi:10.1023/A:1015820616384.">2002</a>]</span>. The three plots on the top show the EOFs for SST, sea level pressure, and surface wind stress, while the time series at the bottom is the associated PC.</p></td>
 </tr>
 </tbody>
 </table>
@@ -522,13 +522,13 @@
 </table>
 </div>
 <p>This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8502ed1f-2938-49f1-b70a-7911f9126f0d">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8502ed1f-2938-49f1-b70a-7911f9126f0d" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f754891-dd2f-41b5-abd5-47cae5779457">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9f754891-dd2f-41b5-abd5-47cae5779457" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c70cf9fe-5cb2-4410-8825-126e74f4835e">
-<span class="eqno">(2)<a class="headerlink" href="#equation-c70cf9fe-5cb2-4410-8825-126e74f4835e" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9614a14f-c8be-40cb-9675-c27db482c6d3">
+<span class="eqno">(2)<a class="headerlink" href="#equation-9614a14f-c8be-40cb-9675-c27db482c6d3" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 &amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
@@ -539,8 +539,8 @@
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
 <p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-393700c9-3b53-41dc-b712-175642ea21b1">
-<span class="eqno">(3)<a class="headerlink" href="#equation-393700c9-3b53-41dc-b712-175642ea21b1" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-512bc208-8aa8-493f-b1f0-8223b08ad796">
+<span class="eqno">(3)<a class="headerlink" href="#equation-512bc208-8aa8-493f-b1f0-8223b08ad796" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
 &amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
@@ -549,13 +549,13 @@
 \end{aligned}
 \end{equation}\]</div>
 <p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-80933e75-9a58-432b-8cb3-ff45a179ccee">
-<span class="eqno">(4)<a class="headerlink" href="#equation-80933e75-9a58-432b-8cb3-ff45a179ccee" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-981fdb45-bc42-4b8e-9038-3125c61207fd">
+<span class="eqno">(4)<a class="headerlink" href="#equation-981fdb45-bc42-4b8e-9038-3125c61207fd" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
 \end{equation}\]</div>
 <p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ade387f0-9930-4370-90b8-e333f9a5775a">
-<span class="eqno">(5)<a class="headerlink" href="#equation-ade387f0-9930-4370-90b8-e333f9a5775a" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cb239255-79ac-419e-91cf-8377850f0ac7">
+<span class="eqno">(5)<a class="headerlink" href="#equation-cb239255-79ac-419e-91cf-8377850f0ac7" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
