@@ -8,3 +8,6 @@ parts:
     chapters:
       - file: notebooks/eof-intro
       - file: notebooks/climate-modes-xeofs
+  - caption: Appendix
+    chapters:
+      - file: references

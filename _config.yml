@@ -25,10 +25,14 @@ parse:
     - smartquotes
     - substitution
 
+bibtex_bibfiles:
+    - references.bib
+
 sphinx:
   config:
     linkcheck_ignore: ["https://doi.org/*"] # don't run link checker on DOI links since they are immutable
     nb_execution_raise_on_error: true # raise exception in build if there are notebook errors (this flag is ignored if building on binder)
+    bibtex_reference_style: author_year
     html_favicon: notebooks/images/icons/favicon.ico
     html_last_updated_fmt: "%-d %B %Y"
     html_theme: sphinx_pythia_theme
