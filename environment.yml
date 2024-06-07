@@ -20,6 +20,4 @@ dependencies:
   - cftime
   - pydap
   - sphinx-pythia-theme
-  - pip
-  - pip:
-      - xeofs
+  - xeofs
