@@ -8,7 +8,6 @@ project:
   # description:
   # keywords: []
   authors: Project Pythia Community
-  #biblio: references.bib
   github: https://github.com/projectpythia-mystmd/eofs-cookbook
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
@@ -21,9 +20,6 @@ project:
       children:
         - file: notebooks/eof-intro.ipynb
         - file: notebooks/climate-modes-xeofs.ipynb
-    - title: Appendix
-      children:
-        - file: references.md
     
 site:
   template: book-theme
