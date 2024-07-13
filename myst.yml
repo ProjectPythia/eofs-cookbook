@@ -4,10 +4,11 @@ extends:
   - https://raw.githubusercontent.com/projectpythia-mystmd/pythia-config/main/pythia.yml
 project:
   id: e8285412-8d71-4ea9-9e66-75f823ad5818
-  # title:
+  title: EOFs Cookbook
   # description:
   # keywords: []
-  # authors: []
+  authors: the <a href="https://projectpythia.org/">Project Pythia</a> Community
+  references: references.bib
   github: https://github.com/projectpythia-mystmd/eofs-cookbook
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
