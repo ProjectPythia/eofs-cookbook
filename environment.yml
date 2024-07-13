@@ -17,6 +17,7 @@ dependencies:
   - fsspec
   - nc-time-axis
   - gcsfs
+  - mystmd
   - cftime
   - pydap
   - sphinx-pythia-theme
