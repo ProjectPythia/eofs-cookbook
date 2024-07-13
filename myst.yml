@@ -8,7 +8,7 @@ project:
   # description:
   # keywords: []
   authors: Project Pythia Community
-  references: references.bib
+  biblio: references.bib
   github: https://github.com/projectpythia-mystmd/eofs-cookbook
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
