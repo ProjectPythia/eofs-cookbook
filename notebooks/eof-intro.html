@@ -16,19 +16,21 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -37,10 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -81,7 +84,8 @@
     <link rel="prev" title="How to Cite This Cookbook" href="how-to-cite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="17 October 2024"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="9 January 2025"/>
   </head>
   
   
@@ -120,7 +124,7 @@
     
     
     <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="EOFs Cookbook - Home"/>
-    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="EOFs Cookbook - Home"/>`);</script>
+    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark pst-js-only" alt="EOFs Cookbook - Home"/>
   
   
 </a></div>
@@ -347,7 +351,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search..."
          aria-label="Search..."
          autocomplete="off"
@@ -386,9 +389,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
         </div>
@@ -524,13 +532,13 @@
 </table>
 </div>
 <p>This is now an optimization problem. To maximize the alignment between the basis and observations, we will maximize the projection of the vectors <span class="math notranslate nohighlight">\(\mathbf f_n\)</span> onto each basis vector using the sum of squares:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-09566095-bd7a-4aea-965e-b341de41524f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-09566095-bd7a-4aea-965e-b341de41524f" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d734faad-e42f-4afe-9575-5649dd9890c0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d734faad-e42f-4afe-9575-5649dd9890c0" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(m=1, 2, \dots, M\)</span>. We also require mutual orthonormality for the basis: <span class="math notranslate nohighlight">\(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\)</span>. Now, let’s define this quantity as <span class="math notranslate nohighlight">\(\psi(\mathbf e_m)\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9d0cc52-241c-478d-9cfc-50bf18c60774">
-<span class="eqno">(2)<a class="headerlink" href="#equation-d9d0cc52-241c-478d-9cfc-50bf18c60774" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6de87266-73c4-41cf-9d78-4a4c9a6ce507">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6de87266-73c4-41cf-9d78-4a4c9a6ce507" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e_m)\equiv\sum_{n=1}^N(\mathbf f_n \cdot \mathbf e_m)^2
 &amp;=\sum_{n=1}^N(\mathbf e_m^\mathrm T \mathbf f_n)(\mathbf f_n^\mathrm T\mathbf e_m)\\
@@ -541,8 +549,8 @@
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf R=\mathbf F\mathbf F^\mathrm T\)</span> is the covariance matrix of <span class="math notranslate nohighlight">\(\mathbf F\)</span>.</p>
 <p>We now seek the extrema of <span class="math notranslate nohighlight">\(\psi(\mathbf e)\)</span> (dropping the subscript <span class="math notranslate nohighlight">\(m\)</span> for convenience), which satisfy <span class="math notranslate nohighlight">\(\psi(\mathbf e+\delta\mathbf e)=\psi(\mathbf e)\)</span> for a small change <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>. Then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c50a4c9a-471d-4871-ac61-0ac222e64f25">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c50a4c9a-471d-4871-ac61-0ac222e64f25" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7c7f0dbd-4b77-4b0e-bc3e-7dd87adcc221">
+<span class="eqno">(3)<a class="headerlink" href="#equation-7c7f0dbd-4b77-4b0e-bc3e-7dd87adcc221" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 \begin{aligned}
 \psi(\mathbf e+\delta\mathbf e)&amp;=(\mathbf e+\delta\mathbf e)^\mathrm T\mathbf R(\mathbf e+\delta\mathbf e)\\
 &amp;=\mathbf e^\mathrm T\mathbf R\mathbf e+2(\delta\mathbf e)^\mathrm T\mathbf R\mathbf e + (\delta\mathbf e)^\mathrm T\mathbf R\delta\mathbf e\\
@@ -551,13 +559,13 @@
 \end{aligned}
 \end{equation}\]</div>
 <p>where we only keep the terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. The optimization condition implies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69eb05d6-4fc6-4602-8b46-98dc7a08f280">
-<span class="eqno">(4)<a class="headerlink" href="#equation-69eb05d6-4fc6-4602-8b46-98dc7a08f280" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-574cf41b-c501-41f2-9cc3-892eb13f010a">
+<span class="eqno">(4)<a class="headerlink" href="#equation-574cf41b-c501-41f2-9cc3-892eb13f010a" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e=0
 \end{equation}\]</div>
 <p>By the orthonormality of the basis, we also require that these variations only change the direction of <span class="math notranslate nohighlight">\(\mathbf e\)</span>, so <span class="math notranslate nohighlight">\((\mathbf e+\delta\mathbf e)^\mathrm T(\mathbf e+\delta\mathbf e)=1\Rightarrow(\delta\mathbf e)^\mathrm T\mathbf e=0\)</span>, again only keeping terms first order in <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span>. We can combine these two conditions, provided that we multiply the orthonormality condition by a constant that has the same units as the entries of <span class="math notranslate nohighlight">\(\mathbf R\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d994c96-a9ab-4150-aa64-351f22cd8298">
-<span class="eqno">(5)<a class="headerlink" href="#equation-9d994c96-a9ab-4150-aa64-351f22cd8298" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-558d9ffe-27d0-489e-8883-e16f81a23434">
+<span class="eqno">(5)<a class="headerlink" href="#equation-558d9ffe-27d0-489e-8883-e16f81a23434" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{equation}
 (\delta\mathbf e)^\mathrm T\mathbf R\mathbf e-\lambda(\delta\mathbf e)^\mathrm T\mathbf e=(\delta\mathbf e)^\mathrm T[\mathbf R\mathbf e-\lambda\mathbf e]=0
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\delta\mathbf e\)</span> is arbitrary, we must have <span class="math notranslate nohighlight">\(\mathbf R\mathbf e-\lambda\mathbf e=0\)</span>, the eigenvalue problem for <span class="math notranslate nohighlight">\(\mathbf R\)</span>, or for nontrivial solutions, <span class="math notranslate nohighlight">\(|\mathbf R-\lambda\mathbf I|=0\)</span>.</p>
@@ -853,24 +861,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -908,7 +908,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 17 October 2024.
+  Last updated on 9 January 2025.
   <br/>
 </p>
   </div>
@@ -925,8 +925,8 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
   </div>
     
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
      
@@ -962,7 +962,7 @@ By the <a href="https://projectpythia.org/">Project Pythia</a> Community
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 17 October 2024.
+          Last updated on 9 January 2025.
         </p>
       </div>
     </div>
