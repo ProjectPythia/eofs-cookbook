@@ -2,6 +2,7 @@ name: eofs-cookbook-dev
 channels:
   - conda-forge
 dependencies:
+  - python
   - jupyter-book
   - jupyterlab
   - jupyter_server
@@ -21,4 +22,3 @@ dependencies:
   - cftime
   - pydap
   - sphinx-pythia-theme
-  - xeofs
