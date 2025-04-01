@@ -22,7 +22,7 @@ project:
         - file: notebooks/climate-modes-xeofs.ipynb
   jupyter:
       binder: https://binder.projectpythia.org/
-        repo: projectpythia-mystmd/eofs-cookbook
+      repo: projectpythia-mystmd/eofs-cookbook
 site:
   template: book-theme
   # options:
