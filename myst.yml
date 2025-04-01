@@ -21,8 +21,8 @@ project:
         - file: notebooks/eof-intro.ipynb
         - file: notebooks/climate-modes-xeofs.ipynb
   jupyter:
-      binder:
-        repo: projectpythia-mystmd/eofs-cookbook    
+      binder: https://binder.projectpythia.org/
+        repo: projectpythia-mystmd/eofs-cookbook
 site:
   template: book-theme
   # options:
