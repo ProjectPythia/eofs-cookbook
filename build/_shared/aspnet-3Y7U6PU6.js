@@ -1,0 +1,1 @@
+import{a}from"/eofs-cookbook/build/_shared/chunk-XGSISLKW.js";import"/eofs-cookbook/build/_shared/chunk-IG7MYDTV.js";import"/eofs-cookbook/build/_shared/chunk-2NH4LW52.js";export default a();
