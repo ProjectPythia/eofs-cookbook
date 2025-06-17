@@ -3,9 +3,8 @@ channels:
   - conda-forge
 dependencies:
   - python
-  - jupyter-book
-  - jupyterlab
   - jupyter_server
+  - ipykernel
   - numpy
   - xarray
   - matplotlib
@@ -18,6 +17,6 @@ dependencies:
   - fsspec
   - nc-time-axis
   - gcsfs
+  - mystmd
   - cftime
   - pydap
-  - sphinx-pythia-theme

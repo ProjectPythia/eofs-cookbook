@@ -11,7 +11,8 @@ jobs:
   build:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
     with:
-      environment_name: cookbook-dev
+      build_command: 'myst build --execute --html'
+
 
   deploy:
     needs: build
