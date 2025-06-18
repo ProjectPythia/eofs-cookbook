@@ -1,6 +1,6 @@
-<img src="notebooks/images/nh-slp-eofs.png" alt="thumbnail" width="800"/>
-
 # EOFs Cookbook
+
+<img src="notebooks/images/nh-slp-eofs.png" alt="thumbnail" width="800"/>
 
 [![nightly-build](https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/eofs-cookbook/main?labpath=notebooks)
