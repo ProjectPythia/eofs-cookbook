@@ -10,7 +10,7 @@ This Project Pythia Cookbook covers empirical orthogonal function analysis and i
 
 ## Motivation
 
-Empirical orthogonal function (EOF) analysis is an essential tool for studying the variability of the atmosphere-ocean system. Meteorological and oceanographic data is noisy and multidimensional, but an EOF analysis allows us to pull out patterns from the data that might otherwise be difficult to find. The goal of this cookbook is to provide background and context to the analysis alongside practical examples of carrying out the analysis using Python packages.
+Empirical orthogonal function (EOF) analysis is an essential tool for studying the variability of the atmosphere–ocean system. Meteorological and oceanographic data is noisy and multidimensional, but an EOF analysis allows us to pull out patterns from the data that might otherwise be difficult to find. The goal of this cookbook is to provide background and context to the analysis alongside practical examples of carrying out the analysis using Python packages.
 
 ## Authors
 
@@ -28,8 +28,9 @@ This cookbook currently has one section that covers the basics of EOF analysis.
 
 ### Foundations
 
-This section includes two notebooks:
+This section includes three notebooks:
 - Introduction to EOFs
+- EOFs with NumPy
 - Finding Climate Modes with EOFs
 
 ## Running the Notebooks

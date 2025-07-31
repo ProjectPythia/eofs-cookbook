@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python
   - jupyter_server
+  - jupyterlab
   - ipykernel
   - numpy
   - xarray

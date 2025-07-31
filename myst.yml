@@ -19,6 +19,7 @@ project:
     - title: Foundations
       children:
         - file: notebooks/eof-intro.ipynb
+        - file: notebooks/numpy-eofs.ipynb
         - file: notebooks/climate-modes-xeofs.ipynb
   jupyter:
       binder:
