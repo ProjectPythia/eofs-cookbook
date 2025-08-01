@@ -4,4 +4,4 @@ The material in Project Pythia's EOFs Cookbook is licensed for free and open con
 
 The source code for the book is [released on GitHub](https://github.com/ProjectPythia/eofs-cookbook) and archived on Zenodo. This DOI will always resolve to the latest release of the book source:
 
-[![DOI](https://zenodo.org/badge/656765685.svg)](https://zenodo.org/badge/latestdoi/656765685)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10909812.svg)](https://doi.org/10.5281/zenodo.10909812)
