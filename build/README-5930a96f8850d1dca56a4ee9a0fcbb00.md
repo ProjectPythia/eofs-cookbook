@@ -4,7 +4,7 @@
 
 [![nightly-build](https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/eofs-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/eofs-cookbook/main?labpath=notebooks)
-[![DOI](https://zenodo.org/badge/656765685.svg)](https://zenodo.org/badge/latestdoi/656765685)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10971017.svg)](https://doi.org/10.5281/zenodo.10971017)
 
 This Project Pythia Cookbook covers empirical orthogonal function analysis and its application to climate data.
 
