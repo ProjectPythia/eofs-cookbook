@@ -7,7 +7,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10909812.svg)](https://doi.org/10.5281/zenodo.10909812)
 
 
-This Project Pythia Cookbook covers empirical orthogonal function analysis and its application to climate data.
+This Project Pythia Cookbook covers empirical orthogonal function (EOF) analysis and its application to climate data.
 
 ## Motivation
 
