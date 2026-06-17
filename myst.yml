@@ -7,7 +7,8 @@ project:
   title: EOFs Cookbook
   # description:
   # keywords: []
-  authors: Project Pythia Community
+  authors:
+    - r-ford
   github: https://github.com/projectpythia/eofs-cookbook
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
